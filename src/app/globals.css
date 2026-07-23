@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f1319;
+  --surface: #171d27;
+  --surface-2: #1e2632;
+  --foreground: #eef1f6;
+  --muted: #8a94a6;
+  --amber: #ffc23c;
+  --racer-x: #ff4d5e;
+  --racer-o: #3ab0ff;
+  --success: #22d3a5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-amber: var(--amber);
+  --color-racer-x: var(--racer-x);
+  --color-racer-o: var(--racer-o);
+  --color-success: var(--success);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  background-image:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(255, 194, 60, 0.06),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 90%,
+      rgba(58, 176, 255, 0.08),
+      transparent 45%
+    );
+}
+
+.checker-strip {
+  background-image: repeating-conic-gradient(#0f1319 0% 25%, #2a3140 0% 50%);
+  background-size: 14px 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Hide scrollbar but keep scrolling */
+::-webkit-scrollbar {
+  display: none;
+}
